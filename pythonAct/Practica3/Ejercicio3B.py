@@ -1,3 +1,6 @@
+import PySimpleGUI as sg
+import json
+
 def ingreso_usuarios():
     ok='si'
     d={}
@@ -12,6 +15,52 @@ def ingreso_usuarios():
         else:
             print('este nombre de usuario ya esta registrado, intente con otro')
     return d
+
+def modificoDatos(users):
+    
+    layout=[
+        [sg.Text('Ingrese datos de usuario nuevo o existente')],
+        [sg.Text('Nombre:')],
+        [sg.InputText(key='nom_',size=(40,1))],
+        [sg.Text('Nivel alcanzado:')],
+        [sg.InputText(key='nivel_',size=(40,1))],
+        [sg.Text('Puntaje alcanzado:')],
+        [sg.InputText(key='puntaje_',size=(40,1))],
+        [sg.Text('Tiempo de juego:')],
+        [sg.InputText(key='tiempo_',size=(40,1))],
+        [sg.Button('Enter')],
+    ]
+    window=sg.Window('Enter user',layout)
+    event,values=window.read()
+    if event=='Enter':
+        f=open('usuariosJSON.txt','r')
+        data=json.load(f)
+        f.close()
+        data[values['nom_']]={'nivel':values['nivel_'],'puntaje':values['puntaje_'],'tiempo':values['tiempo_']}
+        f=open('usuariosJSON.txt','w')
+        json.dump(data,f,indent=4)
+        f.close()
+    window.close()
+
+
+def importacion(usu):
+    layout=[
+        [sg.Text('Do you want to export users to a file?')],
+        [sg.Button('Yes'),sg.Button('No')]
+    ]
+    window=sg.Window('Importation',layout)
+    event,values=window.read()
+    print(event)
+    if event=='Yes':
+        f=open('usuariosJSON.txt','w')
+        json.dump(usu,f,indent=4)
+        f.close()
+        f=open('usuariosJSON.txt','r')
+        data=json.load(f)
+        print(data)
+        f.close()
+        modificoDatos(usu)
+    window.close()
 
 
 dic=ingreso_usuarios()
@@ -30,3 +79,5 @@ else:
 lis_ord=sorted(lis_items, key=lambda usuario: usuario[1]['puntaje'],reverse=True)[:10]
 print('mejores 10 ')
 print(lis_ord)
+
+importacion(dic)

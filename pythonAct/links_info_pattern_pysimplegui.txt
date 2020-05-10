@@ -1,0 +1,21 @@
+-link trinket pysimplegui:
+	https://pysimplegui.trinket.io/demo-programs#/demo-programs/design-pattern-1-the-one-shot
+
+-link info pattern en git:
+	https://github.com/clips/pattern/wiki/pattern-es
+
+-link pysimplegui cookbook:
+	https://pysimplegui.readthedocs.io/en/latest/cookbook/
+
+-link pysimplegui graph ejemplo:
+	https://github.com/PySimpleGUI/PySimpleGUI/blob/master/DemoPrograms/Demo_Graph_Drawing.py
+
+-link csv:
+	https://docs.python.org/3/library/csv.html
+
+-link json:
+	https://www.analyticslane.com/2018/07/16/archivos-json-con-python/
+
+-link modulo os:
+	https://entrenamiento-python-basico.readthedocs.io/es/latest/leccion7/archivos.html
+

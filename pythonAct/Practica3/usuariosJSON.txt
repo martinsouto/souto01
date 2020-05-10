@@ -1,0 +1,22 @@
+{
+    "martin": {
+        "nivel": 1,
+        "puntaje": 1,
+        "tiempo": 1.0
+    },
+    "fede": {
+        "nivel": 2,
+        "puntaje": 2,
+        "tiempo": 2.0
+    },
+    "tomas": {
+        "nivel": 3,
+        "puntaje": 60,
+        "tiempo": 4.0
+    },
+    "pedro": {
+        "nivel": "4",
+        "puntaje": "4",
+        "tiempo": "4"
+    }
+}
