@@ -5,6 +5,11 @@ import PySimpleGUI as sg
 import time
 import json
 
+#La estructura de datos que elegi es un diccionario donde las claves son el nombre de usuario de los jugadores,los valores son listas que tienen el juego que jugó
+# y la hora a la que lo hizo, esto esta dentro de otra lista. Esto es para que si un mismo usuario vuelve a jugar se guardé el nuevojuego que jugó sin borrar el anterior
+
+# utilizo un archivo de tipo json ya que me resultan ordenados, fáciles de manejar y me permiten guardar la estructura donde estan almacenados los usuarios 
+
 def guardar_datos(nombre, juego_hora):
 	try:
 		f=open('archivo.json','r')
